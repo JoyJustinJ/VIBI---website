@@ -1,15 +1,11 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowDownRight, Sparkles } from 'lucide-react';
 
 export const Hero: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { amount: 0.25 });
-
   return (
     <section
       id="top"
-      ref={containerRef}
       className="relative flex min-h-[92vh] md:min-h-screen flex-col items-center justify-between overflow-hidden px-4 pt-32 pb-8 md:px-10 isolate"
     >
       {/* Full Background Video */}
