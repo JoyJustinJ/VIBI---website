@@ -198,7 +198,7 @@ export const TransparentVideo: React.FC<TransparentVideoProps> = ({
       {/* GPU Hardware-Accelerated 100% Transparent Canvas */}
       <canvas
         ref={canvasRef}
-        className="w-full h-full object-contain pointer-events-none select-none drop-shadow-[0_20px_70px_rgba(209,255,0,0.2)]"
+        className="w-full h-full object-contain pointer-events-none select-none drop-shadow-[0_20px_70px_var(--color-accent)]"
       />
     </div>
   );

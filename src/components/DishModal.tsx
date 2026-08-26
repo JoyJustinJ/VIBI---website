@@ -64,47 +64,56 @@ export const DishModal: React.FC<DishModalProps> = ({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.25 }}
-        className="fixed inset-0 z-50 overflow-y-auto bg-[#0F0F0F] p-4 sm:p-6 md:p-10 flex items-center justify-center"
+        className="fixed inset-0 z-50 overflow-y-auto bg-background p-4 sm:p-6 md:p-10 flex items-center justify-center"
       >
         {/* Close Button */}
         <button
           onClick={onClose}
           aria-label="Close dish preview"
-          className="fixed right-4 top-4 sm:right-6 sm:top-6 z-30 rounded-full border border-white/20 p-2.5 sm:p-3 text-white/80 transition-all hover:border-white hover:text-white hover:rotate-90 bg-black/50 backdrop-blur-md"
+          className="fixed right-4 top-4 sm:right-6 sm:top-6 z-30 rounded-full border border-white/20 p-3.5 sm:p-3 text-white/80 transition-all hover:border-white hover:text-white hover:rotate-90 bg-black/50 backdrop-blur-md"
         >
           <X size={20} />
         </button>
 
         <div className="mx-auto grid min-h-full max-w-6xl items-center gap-8 py-10 md:grid-cols-2 md:py-0 w-full">
           {/* Dish Image + Floating Badges */}
-          <div className="relative flex min-h-[300px] sm:min-h-[380px] md:min-h-[480px] items-center justify-center">
-            <div className="absolute inset-4 md:inset-8 rounded-full border border-[#D1FF00]/30 animate-pulse pointer-events-none" />
+          <div className="relative flex flex-col sm:flex-row min-h-[300px] sm:min-h-[380px] md:min-h-[480px] items-center justify-center">
+            <div className="absolute inset-4 md:inset-8 rounded-full border border-accent/30 animate-pulse pointer-events-none hidden sm:block" />
             <img
               src={dish.image}
               alt={dish.name}
-              className="relative h-[260px] sm:h-[340px] md:h-[460px] w-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.9)]"
+              className="relative h-[220px] sm:h-[340px] md:h-[460px] w-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.9)]"
             />
 
             {dish.ingredients.map((ingredient, idx) => (
               <span
                 key={ingredient}
-                className={`absolute rounded-full border border-white/20 bg-black/80 px-3 sm:px-4 py-1.5 font-mono text-[10px] sm:text-xs text-white/90 backdrop-blur-md shadow-lg ${
+                className={`hidden sm:inline-block absolute rounded-full border border-white/20 bg-black/80 px-3 sm:px-4 py-1.5 font-mono text-[10px] sm:text-xs text-white/90 backdrop-blur-md shadow-lg ${
                   ingredientPositions[idx] || 'top-10 left-10'
                 }`}
               >
                 {ingredient}
               </span>
             ))}
+            
+            {/* Mobile Ingredients List */}
+            <div className="mt-4 flex sm:hidden flex-wrap justify-center gap-1.5 w-full">
+              {dish.ingredients.map((ingredient) => (
+                <span key={ingredient} className="rounded-full border border-white/20 bg-black/40 px-3 py-1 font-mono text-[10px] text-white/90">
+                  {ingredient}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Dish Info & Price Display */}
           <div className="flex flex-col justify-center">
             <div className="flex items-center gap-3">
-              <span className="font-mono text-xs tracking-[.3em] text-[#D1FF00] uppercase">
+              <span className="font-mono text-xs tracking-[.3em] text-accent uppercase">
                 {dish.itemNumber ? `ITEM NO. ${dish.itemNumber}` : 'FRESH MENU ITEM'}
               </span>
               {dish.badge && (
-                <span className="rounded-full bg-[#D1FF00]/20 border border-[#D1FF00]/40 px-2.5 py-0.5 font-mono text-[9px] font-bold text-[#D1FF00] uppercase">
+                <span className="rounded-full bg-accent/20 border border-accent/40 px-2.5 py-0.5 font-mono text-[9px] font-bold text-accent uppercase">
                   {dish.badge}
                 </span>
               )}
@@ -131,7 +140,7 @@ export const DishModal: React.FC<DishModalProps> = ({
                       onClick={() => setSelectedSize(size)}
                       className={`rounded-full px-4 py-2 font-mono text-xs tracking-wider transition-all ${
                         selectedSize?.name === size.name
-                          ? 'bg-[#D1FF00] text-black font-bold shadow-[0_0_15px_rgba(209,255,0,0.3)]'
+                          ? 'bg-accent text-black font-bold shadow-[0_0_15px_var(--color-accent)]'
                           : 'border border-white/20 bg-black/40 text-white/70 hover:border-white/40 hover:text-white'
                       }`}
                     >
@@ -150,7 +159,7 @@ export const DishModal: React.FC<DishModalProps> = ({
                     ₹{currentOriginalPrice}
                   </span>
                 )}
-                <b className="font-serif text-3xl sm:text-4xl text-[#D1FF00]">
+                <b className="font-serif text-3xl sm:text-4xl text-accent">
                   ₹{currentPrice}
                 </b>
               </div>

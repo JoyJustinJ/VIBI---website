@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0f0f0f;
-  --color-foreground: #f2f2f2;
-  --color-accent: #d1ff00;
+  --color-background: #000000;
+  --color-foreground: #FDF5E6;
+  --color-accent: #D4AF37;
   
   --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -12,8 +12,8 @@
 
 @layer base {
   body {
-    background-color: #0f0f0f;
-    color: #f2f2f2;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
     font-family: var(--font-sans);
     overflow-x: hidden;
   }
@@ -32,7 +32,7 @@
   right: 10%;
   bottom: 10%;
   left: 10%;
-  border: 1px solid rgba(209, 255, 0, 0.16);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 16%, transparent);
   border-radius: 9999px;
   transform: rotate(-18deg);
   animation: orbit-rotate 40s linear infinite;
@@ -50,13 +50,13 @@
   right: 8px;
   bottom: 8px;
   left: 8px;
-  border: 1px solid rgba(209, 255, 0, 0.12);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 12%, transparent);
   border-radius: 9999px;
   transition: all 0.5s ease;
 }
 
 .group:hover .orbital-mini::before {
-  border-color: rgba(209, 255, 0, 0.4);
+  border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
   transform: scale(1.05);
 }
 
@@ -85,7 +85,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f0f0f;
+  background: var(--color-background);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -94,5 +94,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d1ff00;
+  background: var(--color-accent);
 }

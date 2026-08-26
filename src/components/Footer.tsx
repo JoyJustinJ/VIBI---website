@@ -8,14 +8,14 @@ export const Footer: React.FC = () => {
         {/* Large Interactive Callout */}
         <a
           href="#menu"
-          className="group flex w-full items-center justify-between border-b border-white/20 pb-8 text-left transition-colors hover:border-[#D1FF00]/60 outline-none"
+          className="group flex w-full items-center justify-between border-b border-white/20 pb-8 text-left transition-colors hover:border-accent/60 outline-none"
         >
           <span className="font-serif text-5xl md:text-8xl text-white leading-none">
             Freshness in
             <br />
             <i className="italic">every single bite.</i>
           </span>
-          <ArrowUpRight className="h-14 w-14 text-[#D1FF00] transition-transform duration-500 group-hover:rotate-45 shrink-0 ml-4" />
+          <ArrowUpRight className="h-14 w-14 text-accent transition-transform duration-500 group-hover:rotate-45 shrink-0 ml-4" />
         </a>
 
         {/* Bottom Metadata Bar */}
@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
           <span>VIBI · DAILY FRESH FRIED CHICKEN</span>
           <a
             href="#top"
-            className="text-[#D1FF00] hover:text-white transition-colors uppercase"
+            className="text-accent hover:text-white transition-colors uppercase"
           >
             BACK TO TOP ↑
           </a>

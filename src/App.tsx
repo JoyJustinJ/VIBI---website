@@ -17,7 +17,7 @@ export function App() {
   };
 
   return (
-    <main className="min-h-screen bg-[#0F0F0F] text-[#F2F2F2] selection:bg-[#D1FF00] selection:text-black">
+    <main className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-black">
       {/* Fixed Top Header */}
       <Header />
 

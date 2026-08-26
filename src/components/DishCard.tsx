@@ -22,7 +22,7 @@ export const DishCard: React.FC<DishCardProps> = ({ dish, index, onOpen }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-20px' }}
       transition={{ delay: (index % 4) * 0.04, duration: 0.35 }}
-      className="group relative flex flex-col justify-between h-full overflow-hidden rounded-xl border border-white/10 bg-black/40 p-3 sm:p-4 md:p-5 text-left transition-all duration-300 hover:border-[#D1FF00]/60 hover:bg-black/60 shadow-lg"
+      className="group relative flex flex-col justify-between h-full overflow-hidden rounded-xl border border-white/10 bg-black/40 p-3 sm:p-4 md:p-5 text-left transition-all duration-300 hover:border-accent/60 hover:bg-black/60 shadow-lg"
     >
       <div>
         {/* Top Header: Price & Badge */}
@@ -33,13 +33,13 @@ export const DishCard: React.FC<DishCardProps> = ({ dish, index, onOpen }) => {
                 ₹{currentOriginalPrice}
               </span>
             )}
-            <span className="text-xs sm:text-sm md:text-base font-bold text-[#D1FF00]">
+            <span className="text-xs sm:text-sm md:text-base font-bold text-accent">
               ₹{currentPrice}
             </span>
           </div>
 
           {dish.badge && (
-            <span className="rounded-full bg-[#D1FF00]/15 border border-[#D1FF00]/30 px-1.5 sm:px-2 py-0.5 font-mono text-[7.5px] sm:text-[9px] font-bold tracking-wider text-[#D1FF00] uppercase truncate max-w-[90px] sm:max-w-[120px]">
+            <span className="rounded-full bg-accent/15 border border-accent/30 px-1.5 sm:px-2 py-0.5 font-mono text-[7.5px] sm:text-[9px] font-bold tracking-wider text-accent uppercase truncate max-w-[90px] sm:max-w-[120px]">
               {dish.badge}
             </span>
           )}
@@ -62,13 +62,13 @@ export const DishCard: React.FC<DishCardProps> = ({ dish, index, onOpen }) => {
         {/* Title and Description */}
         <div className="mt-2">
           {dish.itemNumber && (
-            <span className="font-mono text-[8px] sm:text-[9px] text-[#D1FF00]/70 tracking-widest block mb-0.5 uppercase">
+            <span className="font-mono text-[8px] sm:text-[9px] text-accent/70 tracking-widest block mb-0.5 uppercase">
               NO. {dish.itemNumber}
             </span>
           )}
           <h3
             onClick={() => onOpen(dish, selectedSize)}
-            className="font-serif text-sm sm:text-base md:text-xl font-medium leading-snug text-white group-hover:text-[#D1FF00] transition-colors cursor-pointer line-clamp-2"
+            className="font-serif text-sm sm:text-base md:text-xl font-medium leading-snug text-white group-hover:text-accent transition-colors cursor-pointer line-clamp-2"
           >
             {dish.name}
           </h3>
@@ -90,9 +90,9 @@ export const DishCard: React.FC<DishCardProps> = ({ dish, index, onOpen }) => {
                   e.stopPropagation();
                   setSelectedSize(size);
                 }}
-                className={`rounded px-1.5 sm:px-2 py-0.5 font-mono text-[8px] sm:text-[9px] tracking-tight transition-colors ${
+                className={`rounded px-2.5 sm:px-3 py-1.5 font-mono text-[10px] sm:text-[11px] tracking-tight transition-colors ${
                   selectedSize?.name === size.name
-                    ? 'bg-[#D1FF00] text-black font-bold'
+                    ? 'bg-accent text-black font-bold'
                     : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white'
                 }`}
               >
@@ -104,7 +104,7 @@ export const DishCard: React.FC<DishCardProps> = ({ dish, index, onOpen }) => {
 
         <button
           onClick={() => onOpen(dish, selectedSize)}
-          className="inline-flex items-center gap-1 font-mono text-[9px] sm:text-[10px] tracking-[.2em] text-[#D1FF00] transition-transform group-hover:translate-x-1"
+          className="inline-flex items-center gap-1 font-mono text-[10px] sm:text-[11px] py-1 tracking-[.2em] text-accent transition-transform group-hover:translate-x-1"
         >
           <span>VIEW</span>
           <span>→</span>

@@ -12,7 +12,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onOpenDish }) => {
     <section id="menu" className="border-t border-white/10 py-16 md:py-24">
       {/* Main Section Heading */}
       <div className="px-4 sm:px-6 md:px-10">
-        <p className="font-mono text-xs tracking-[.3em] text-[#D1FF00] uppercase">
+        <p className="font-mono text-xs tracking-[.3em] text-accent uppercase">
           AUTHENTIC MENU · 100% FRESH INGREDIENTS
         </p>
         <h2 className="mt-3 max-w-4xl font-serif text-4xl sm:text-6xl md:text-8xl leading-[.95] text-white">
@@ -44,7 +44,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ onOpenDish }) => {
                     {cat.note}
                   </p>
                 </div>
-                <span className="font-mono text-[10px] sm:text-xs tracking-[.2em] text-[#D1FF00] uppercase font-bold shrink-0 ml-2">
+                <span className="font-mono text-[10px] sm:text-xs tracking-[.2em] text-accent uppercase font-bold shrink-0 ml-2">
                   {categoryDishes.length} ITEMS
                 </span>
               </div>

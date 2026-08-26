@@ -83,7 +83,7 @@ export const ReservationDrawer: React.FC<ReservationDrawerProps> = ({ open, onCl
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-            className="fixed right-0 top-0 z-50 h-full w-full overflow-y-auto bg-[#D1FF00] p-6 text-black md:w-[560px] md:p-12 shadow-2xl flex flex-col justify-between"
+            className="fixed right-0 top-0 z-50 h-full w-full overflow-y-auto bg-accent p-6 text-black md:w-[560px] md:p-12 shadow-2xl flex flex-col justify-between"
           >
             <div>
               {/* Header Close button */}
@@ -178,10 +178,10 @@ export const ReservationDrawer: React.FC<ReservationDrawerProps> = ({ open, onCl
                         }
                         className="mt-2 w-full rounded-full border border-black/30 bg-transparent p-4 text-base font-sans outline-none focus:border-black cursor-pointer"
                       >
-                        <option value="18:30" className="bg-[#D1FF00] text-black">18:30</option>
-                        <option value="19:00" className="bg-[#D1FF00] text-black">19:00</option>
-                        <option value="20:00" className="bg-[#D1FF00] text-black">20:00</option>
-                        <option value="21:00" className="bg-[#D1FF00] text-black">21:00</option>
+                        <option value="18:30" className="bg-accent text-black">18:30</option>
+                        <option value="19:00" className="bg-accent text-black">19:00</option>
+                        <option value="20:00" className="bg-accent text-black">20:00</option>
+                        <option value="21:00" className="bg-accent text-black">21:00</option>
                       </select>
                     </label>
 

@@ -6,22 +6,22 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#0F0F0F]/80 backdrop-blur-xl transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-background/80 backdrop-blur-xl transition-all duration-300 ${
         isOpen ? 'pb-6' : ''
       }`}
     >
       <div className="mx-auto flex h-16 sm:h-20 max-w-[1440px] items-center justify-between px-4 sm:px-6 md:px-10">
         <a
           href="#top"
-          className="font-serif text-2xl sm:text-3xl italic tracking-tight text-white transition-opacity hover:opacity-80"
+          className="flex items-center transition-opacity hover:opacity-80"
         >
-          Vibi<span className="text-[#D1FF00]">.</span>
+          <img src="/logo.png" alt="Vibi Logo" className="h-12 w-12 sm:h-14 sm:w-14 object-contain rounded-full mix-blend-lighten" />
         </a>
 
         <div className="flex items-center gap-3">
           <a
             href="#menu"
-            className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-4 py-2 font-mono text-[11px] tracking-widest text-white/80 transition-all hover:border-[#D1FF00] hover:text-[#D1FF00]"
+            className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-4 py-2 font-mono text-[11px] tracking-widest text-white/80 transition-all hover:border-accent hover:text-accent"
           >
             <span>FULL MENU</span>
             <ArrowUpRight size={13} />
@@ -42,14 +42,14 @@ export const Header: React.FC = () => {
           <a
             onClick={() => setIsOpen(false)}
             href="#menu"
-            className="text-white/80 hover:text-[#D1FF00] transition-colors py-2"
+            className="text-white/80 hover:text-accent transition-colors py-2"
           >
             Explore Menu
           </a>
           <a
             onClick={() => setIsOpen(false)}
             href="#top"
-            className="text-white/80 hover:text-[#D1FF00] transition-colors py-2"
+            className="text-white/80 hover:text-accent transition-colors py-2"
           >
             Top ↑
           </a>
