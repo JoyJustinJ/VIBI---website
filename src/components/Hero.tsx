@@ -8,14 +8,19 @@ export const Hero: React.FC = () => {
       id="top"
       className="relative flex min-h-[92vh] md:min-h-screen flex-col items-center justify-between overflow-hidden px-4 pt-32 pb-8 md:px-10 isolate"
     >
-      {/* Full Background Video */}
+      {/* Full Background Video / Image */}
       <video
         src="/videos/hero_video.mp4?v=2"
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover -z-20"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover -z-20"
+      />
+      <img
+        src="/images/hero_mobile.png"
+        alt="Vibi Hero Mobile"
+        className="md:hidden absolute inset-0 w-full h-full object-cover -z-20"
       />
       {/* Dark Overlay for Text Readability */}
       <div className="absolute inset-0 bg-black/60 -z-10" />
