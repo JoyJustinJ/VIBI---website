@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { CATEGORIES } from '../data/menu';
 
 export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,18 +39,21 @@ export const Header: React.FC = () => {
       </div>
 
       {isOpen && (
-        <nav className="mx-auto grid max-w-[1440px] gap-2 px-5 text-right font-serif text-4xl uppercase sm:text-6xl md:text-7xl animate-in fade-in slide-in-from-top-4 duration-300">
-          <a
-            onClick={() => setIsOpen(false)}
-            href="#menu"
-            className="text-white/80 hover:text-accent transition-colors py-2"
-          >
-            Explore Menu
-          </a>
+        <nav className="mx-auto flex flex-col max-w-[1440px] gap-2 sm:gap-4 px-5 text-right font-serif text-3xl uppercase sm:text-5xl md:text-6xl animate-in fade-in slide-in-from-top-4 duration-300 overflow-y-auto max-h-[80vh] pb-8">
+          {CATEGORIES.map((cat) => (
+            <a
+              key={cat.id}
+              onClick={() => setIsOpen(false)}
+              href={`#cat-${cat.id}`}
+              className="text-white/80 hover:text-accent transition-colors py-1.5 sm:py-2"
+            >
+              {cat.label}
+            </a>
+          ))}
           <a
             onClick={() => setIsOpen(false)}
             href="#top"
-            className="text-white/80 hover:text-accent transition-colors py-2"
+            className="text-white/40 hover:text-accent transition-colors py-2 mt-2 sm:mt-4 text-xl sm:text-3xl"
           >
             Top ↑
           </a>
